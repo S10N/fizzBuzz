@@ -1,11 +1,15 @@
-Calculator = function() {
-    this.value = 0;
-};
 
-Calculator.prototype.add = function(number) {
-    if (typeof(number) == "number") {
-        this.value += number;
-    } else {
-        alert("Error!");
+fizzBuzz = function(number) {
+    if (number % 3 === 0 && number % 5 === 0) {
+        return "FizzBuzz";
+    }
+    else if (number % 3 === 0) {
+        return "Fizz";
+    }
+    else if (number % 5 === 0) {
+        return "Buzz";
+    }   
+    else {
+        return number
     }
 };
