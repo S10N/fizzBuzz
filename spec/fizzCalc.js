@@ -1,26 +1,26 @@
-describe("Calculator", function() {
-
-    beforeEach(function() {
-        calc = new Calculator;
+describe("Fizzbuzz", function () {
+    beforeEach(function () {
+        Fizzbuzz = new fizzBuzz;
     });
-
-    describe("Addition function", function() {
-        it("should return 42", function() {
-            calc.add(20);
-            calc.add(22);
-            expect(calc.value).toBe(42);
+    describe("Check modolus", function () {
+        it("should exist", function () {
+            expect(fizzBuzz).toBeDefined();
         });
-
-        it("should return 26", function() {
-            calc.add(7);
-            calc.add(19);
-            expect(calc.value).toBe(26);
+        it("should return fizzbuzz if divisible by 3 and 5", function () {
+            var result = fizzBuzz(15);
+            expect(result).toBe("Fizzbuzz");
         });
-
-        it("should return an error if we don't supply two numbers", function() {
-            spyOn(window, "alert");
-            calc.add("Hitchhikers");
-            expect(window.alert).toHaveBeenCalledWith("Error!");
+        it("should return Fizz if divisible by 3", function () {
+            var result = fizzBuzz(9);
+            expect(result).toBe("Fizz");
+        });
+        it("should return Buzz if only divisible by 5", function () {
+            var result = fizzBuzz(25);
+            expect(result).toBe("Buzz");
+        });
+        it("should return 2 if not divisible by 3 or 5", function () {
+            var result = fizzBuzz(2);
+            expect(result).toBe(2);
         });
     });
 });
